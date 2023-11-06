@@ -24,7 +24,7 @@ javascript:(function() {     var bi=k;(function(a,b){var aZ=k,d=a();while(!![]){
 
 ## Contributor
 
-Thanks to @qiraxyz
+Thanks to [@ghrimXi](https://www.github.com/qiraxyz)
 
 ## Lisensi
 
