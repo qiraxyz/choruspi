@@ -1,3 +1,8 @@
+/**
+ * 
+ * mod menu legacy by @author <https://github.com/qiraxyz>
+ * 
+ */
 let modMenu;
 let title;
 let statusText;
@@ -8,6 +13,12 @@ let deployButton;
 
 // create mod menu layer
 modMenu = document.createElement('div');
+modMenu.style.width = '300px';
+modMenu.style.backgroundColor = '#f0f0f0';
+modMenu.style.border = '1px solid #000';
+modMenu.style.position = 'absolute';
+modMenu.style.padding = '10px';
+modMenu.style.textAlign = 'center';
 
 // create title mod menu text
 title = document.createElement('h1');
@@ -64,9 +75,12 @@ deployButton.style.marginLeft = '10px';
 // function action mod menu
 var autoClickInterval = null;
 var startTime = null;
-
 var status = 'Anti AFK Off';
-
+/**
+ * 
+ * mod menu legacy by @author <https://github.com/qiraxyz>
+ * 
+ */
 destroyButton.addEventListener('click', function () {
     if (autoClickInterval) {
         clearInterval(autoClickInterval);
@@ -80,6 +94,8 @@ deployButton.addEventListener('click', function () {
             var canvasElement = document.getElementById('canvas');
             if (canvasElement) {
                 canvasElement.click();
+            } else if (!canvasElement) {
+                clearInterval(autoClickInterval);
             }
             afkTimeInSeconds += 1;
             afkTimeText.textContent = 'AFK Time: ' + afkTimeInSeconds + ' seconds';
@@ -103,14 +119,11 @@ deployButton.addEventListener('click', function () {
         startTime = null;
     }
 });
-
-modMenu.style.width = '300px';
-modMenu.style.backgroundColor = '#f0f0f0';
-modMenu.style.border = '1px solid #000';
-modMenu.style.position = 'absolute';
-modMenu.style.padding = '10px';
-modMenu.style.textAlign = 'center';
-
+/**
+ * 
+ * mod menu legacy by @author <https://github.com/qiraxyz>
+ * 
+ */
 modMenu.appendChild(title);
 modMenu.appendChild(statusText);
 modMenu.appendChild(afkTimeText);
@@ -138,3 +151,9 @@ document.addEventListener('mousemove', function (e) {
 document.addEventListener('mouseup', function () {
     isDragging = false;
 });
+
+/**
+ * 
+ * mod menu legacy by @author <https://github.com/qiraxyz>
+ * 
+ */
