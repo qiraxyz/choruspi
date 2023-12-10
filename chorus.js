@@ -152,6 +152,26 @@ document.addEventListener('mouseup', function () {
     isDragging = false;
 });
 
+// Event listener for mobile mod menu
+modMenu.addEventListener('touchstart', function (e) {
+    isDragging = true;
+    var touch = e.touches[0];
+    offsetX = touch.clientX - modMenu.getBoundingClientRect().left;
+    offsetY = touch.clientY - modMenu.getBoundingClientRect().top;
+});
+
+document.addEventListener('touchmove', function (e) {
+    if (isDragging) {
+        var touch = e.touches[0];
+        modMenu.style.left = touch.clientX - offsetX + 'px';
+        modMenu.style.top = touch.clientY - offsetY + 'px';
+    }
+});
+
+document.addEventListener('touchend', function () {
+    isDragging = false;
+});
+
 /**
  * 
  * mod menu legacy by @author <https://github.com/qiraxyz>
